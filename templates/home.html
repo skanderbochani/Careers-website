@@ -5,54 +5,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Careers</title>
-  <style>
-    h1 {
-      font-size: 40px;
-      font-family: Roboto;
-      font-weight: normal;
-      color: rgb(100, 100, 100);
-      text-align: center;
-    }
-    #banner {
-      width: 100%;
-      height: 360px;
-      object-fit: cover;
-    }
-    h2{
-      font-family: Roboto;
-      font-size: 32px;
-      color: rgb(100, 100, 100);
-      text-align: center;
-      font-weight:normal
-    }
-    p{
-      font-family: Roboto;
-      color: rgb(80, 80, 80);
-    }
-    #container{
-      max-width: 720px;
-      margin: 0 auto; 
-    }
-    #copyRights {
-      color: rgb(0, 0, 0);
-      text-align: center;
-      font-family: Roboto;
-      font-size: 15px;
-    }
-  </style>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<style>
+  #banner{
+    height: 360px;
+    object-fit: cover;
+    width: 100%;
+  }
+</style>
 </head>
 <body>
- <div id = "container"> 
-  <h1>My Careers</h1>
-  <img id = "banner"src = "static/Banner.jpg">
-  <h2>About My Careers</h2>
-  <p>The "My Careers" web page is dedicated to helping individuals find the perfect job. Our    platform provides a wide range of resources, including job listings, resume writing tips,      interview preparation, and career development advice. We understand the challenges of job      searching and aim to simplify the process by connecting job seekers with relevant             
+ <div class = "container"> 
+  <h1 class = "text-center mt-2 mb-4" >My Careers</h1>
+  <img class = "img-fluid" id = "banner" src = "static/Banner.jpg">
+  <h2 class = "text-center mt-2 mb-4">About My Careers</h2>
+  <p class = "lead">The "My Careers" web page is dedicated to helping individuals find the perfect job. Our    platform provides a wide range of resources, including job listings, resume writing tips,      interview preparation, and career development advice. We understand the challenges of job      searching and aim to simplify the process by connecting job seekers with relevant             
 opportunities and providing valuable guidance at every step. Join us in exploring exciting      career prospects and take the next step towards your dream job today.</p>
-  <h2>Open Positions</h2>
-  <p> TODO - Showing the listing of the jobs here </p>
-  <div style = "text-align: center">
-    <button>Contact Us</button>
-    <p id = "copyRights">Copyright 2023, My Careers</p>
+  <h2 class = "text-center mt-2 mb-4">Open Positions</h2>
+  <div>
+    {% for job in jobs%}
+     {%include 'jobIteam.html'%}
+    {% endfor %}
+  </div>
+  <div class = "text-center">
+    <button class = "btn btn-primary btn-lg">Contact Us</button>
+    <p class = "mt-4">Copyright 2023, My Careers</p>
  </div>
 </body>
 </html>
