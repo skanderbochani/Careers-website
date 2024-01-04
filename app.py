@@ -1,5 +1,4 @@
 from flask import Flask, jsonify, render_template
-from app import app as application
 
 app = Flask(__name__)
 JOBS = [
@@ -41,4 +40,4 @@ def list_jobs():
 
 
 if __name__ == "__main__":
-  application.run()
+  app.run()
